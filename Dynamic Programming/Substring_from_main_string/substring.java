@@ -7,7 +7,9 @@ public class substring {
         for(int i=0;i<input.length();i++)
         {
             ans=generate_SubStrings(input,ans+input.substring(i, count),count+1);
+            
         }
+        return ans;
     }
     public static void main(String[] args)
     {

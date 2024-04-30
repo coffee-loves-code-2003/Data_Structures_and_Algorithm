@@ -16,7 +16,7 @@ public class fibonacci_memoization
         {
             return 1L;
         }
-        obj.put(num,calculate_fibo(num-1,obj)+calculate_fibo(num-2,obj));
+        obj.put(num,calculate_fibo(num-1,obj)+calculate_fibo(num-2,obj)+calculate_fibo(num-3, obj));
         return calculate_fibo(num, obj);
 
 
