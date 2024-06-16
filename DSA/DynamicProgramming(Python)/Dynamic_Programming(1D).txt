@@ -1,0 +1,390 @@
+Leetcode Problem:2770
+
+Maximum number of jumps to reach the last index:
+
+You are given a 0-indexed array nums of n integers and an integer target.
+
+You are initially positioned at index 0. In one step, you can jump from index i to any index j such that:
+
+0 <= i < j < n
+-target <= nums[j] - nums[i] <= target
+Return the maximum number of jumps you can make to reach index n - 1.
+
+If there is no way to reach index n - 1, return -1.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,6,4,1,2], target = 2
+Output: 3
+Explanation: To go from index 0 to index n - 1 with the maximum number of jumps, you can perform the following jumping sequence:
+- Jump from index 0 to index 1. 
+- Jump from index 1 to index 3.
+- Jump from index 3 to index 5.
+It can be proven that there is no other jumping sequence that goes from 0 to n - 1 with more than 3 jumps. Hence, the answer is 3. 
+Example 2:
+
+Input: nums = [1,3,6,4,1,2], target = 3
+Output: 5
+Explanation: To go from index 0 to index n - 1 with the maximum number of jumps, you can perform the following jumping sequence:
+- Jump from index 0 to index 1.
+- Jump from index 1 to index 2.
+- Jump from index 2 to index 3.
+- Jump from index 3 to index 4.
+- Jump from index 4 to index 5.
+It can be proven that there is no other jumping sequence that goes from 0 to n - 1 with more than 5 jumps. Hence, the answer is 5. 
+Example 3:
+
+Input: nums = [1,3,6,4,1,2], target = 0
+Output: -1
+Explanation: It can be proven that there is no jumping sequence that goes from 0 to n - 1. Hence, the answer is -1. 
+ 
+
+Constraints:
+
+2 <= nums.length == n <= 1000
+-10^9 <= nums[i] <= 10^9
+0 <= target <= 2 * 10^9
+
+
+
+
+Program:
+class Solution {
+    public int maximumJumps(int[] nums, int target) {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Leetcode Problem:Frog Jump(403)
+
+
+
+A frog is crossing a river. The river is divided into some number of units, and at each unit, there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.
+
+Given a list of stones positions (in units) in sorted ascending order, determine if the frog can cross the river by landing on the last stone. Initially, the frog is on the first stone and assumes the first jump must be 1 unit.
+
+If the frog's last jump was k units, its next jump must be either k - 1, k, or k + 1 units. The frog can only jump in the forward direction.
+
+ 
+
+Example 1:
+
+Input: stones = [0,1,3,5,6,8,12,17]
+Output: true
+Explanation: The frog can jump to the last stone by jumping 1 unit to the 2nd stone, then 2 units to the 3rd stone, then 2 units to the 4th stone, then 3 units to the 6th stone, 4 units to the 7th stone, and 5 units to the 8th stone.
+Example 2:
+
+Input: stones = [0,1,2,3,4,8,9,11]
+Output: false
+Explanation: There is no way to jump to the last stone as the gap between the 5th and 6th stone is too large.
+ 
+
+Constraints:
+
+2 <= stones.length <= 2000
+0 <= stones[i] <= 2^31 - 1
+stones[0] == 0
+stones is sorted in a strictly increasing order.
+
+
+
+
+Program:
+class Solution {
+    public boolean canCross(int[] stones) {
+        
+    }
+}
+
+
+
+
+
+
+
+
+2498.Frog Jump(2)
+
+You are given a 0-indexed integer array stones sorted in strictly increasing order representing the positions of stones in a river.
+
+A frog, initially on the first stone, wants to travel to the last stone and then return to the first stone. However, it can jump to any stone at most once.
+
+The length of a jump is the absolute difference between the position of the stone the frog is currently on and the position of the stone to which the frog jumps.
+
+More formally, if the frog is at stones[i] and is jumping to stones[j], the length of the jump is |stones[i] - stones[j]|.
+The cost of a path is the maximum length of a jump among all jumps in the path.
+
+Return the minimum cost of a path for the frog.
+
+ 
+
+Example 1:
+
+
+Input: stones = [0,2,5,6,7]
+Output: 5
+Explanation: The above figure represents one of the optimal paths the frog can take.
+The cost of this path is 5, which is the maximum length of a jump.
+Since it is not possible to achieve a cost of less than 5, we return it.
+Example 2:
+
+
+Input: stones = [0,3,9]
+Output: 9
+Explanation: 
+The frog can jump directly to the last stone and come back to the first stone. 
+In this case, the length of each jump will be 9. The cost for the path will be max(9, 9) = 9.
+It can be shown that this is the minimum achievable cost.
+ 
+
+Constraints:
+
+2 <= stones.length <= 10^5
+0 <= stones[i] <= 10^9
+stones[0] == 0
+stones is sorted in a strictly increasing order.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Target Sum:
+
+You are given an integer array nums and an integer target.
+
+You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then concatenate all the integers.
+
+For example, if nums = [2, 1], you can add a '+' before 2 and a '-' before 1 and concatenate them to build the expression "+2-1".
+Return the number of different expressions that you can build, which evaluates to target.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,1,1], target = 3
+Output: 5
+Explanation: There are 5 ways to assign symbols to make the sum of nums be target 3.
+-1 + 1 + 1 + 1 + 1 = 3
++1 - 1 + 1 + 1 + 1 = 3
++1 + 1 - 1 + 1 + 1 = 3
++1 + 1 + 1 - 1 + 1 = 3
++1 + 1 + 1 + 1 - 1 = 3
+Example 2:
+
+Input: nums = [1], target = 1
+Output: 1
+ 
+
+Constraints:
+
+1 <= nums.length <= 20
+0 <= nums[i] <= 1000
+0 <= sum(nums[i]) <= 1000
+-1000 <= target <= 1000
+
+
+
+House Robber:
+
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,1]
+Output: 4
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+Example 2:
+
+Input: nums = [2,7,9,3,1]
+Output: 12
+Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
+Total amount you can rob = 2 + 9 + 1 = 12.
+ 
+
+Constraints:
+
+1 <= nums.length <= 100
+0 <= nums[i] <= 400
+
+
+
+
+House Robber 2:
+
+
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.
+
+ 
+
+Example 1:
+
+Input: nums = [2,3,2]
+Output: 3
+Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2), because they are adjacent houses.
+Example 2:
+
+Input: nums = [1,2,3,1]
+Output: 4
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+Example 3:
+
+Input: nums = [1,2,3]
+Output: 3
+ 
+
+Constraints:
+
+1 <= nums.length <= 100
+0 <= nums[i] <= 1000
+
+
+
+
+
+
+
+
+
+
+45. Jump Game II
+Medium
+Topics
+Companies
+You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0].
+
+Each element nums[i] represents the maximum length of a forward jump from index i. In other words, if you are at nums[i], you can jump to any nums[i + j] where:
+
+0 <= j <= nums[i] and
+i + j < n
+Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can reach nums[n - 1].
+
+ 
+
+Example 1:
+
+Input: nums = [2,3,1,1,4]
+Output: 2
+Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index.
+Example 2:
+
+Input: nums = [2,3,0,1,4]
+Output: 2
+ 
+
+Constraints:
+
+1 <= nums.length <= 104
+0 <= nums[i] <= 1000
+It's guaranteed that you can reach nums[n - 1]
+
+
+
+
+
+
+
+
+
+Code
+
+Testcase
+Test Result
+Test Result
+
+2786. Visit Array Positions to Maximize Score
+Medium
+Topics
+Companies
+Hint
+You are given a 0-indexed integer array nums and a positive integer x.
+
+You are initially at position 0 in the array and you can visit other positions according to the following rules:
+
+If you are currently in position i, then you can move to any position j such that i < j.
+For each position i that you visit, you get a score of nums[i].
+If you move from a position i to a position j and the parities of nums[i] and nums[j] differ, then you lose a score of x.
+Return the maximum total score you can get.
+
+Note that initially you have nums[0] points.
+
+ 
+
+Example 1:
+
+Input: nums = [2,3,6,1,9,2], x = 5
+Output: 13
+Explanation: We can visit the following positions in the array: 0 -> 2 -> 3 -> 4.
+The corresponding values are 2, 6, 1 and 9. Since the integers 6 and 1 have different parities, the move 2 -> 3 will make you lose a score of x = 5.
+The total score will be: 2 + 6 + 1 + 9 - 5 = 13.
+Example 2:
+
+Input: nums = [2,4,6,8], x = 3
+Output: 20
+Explanation: All the integers in the array have the same parities, so we can visit all of them without losing any score.
+The total score is: 2 + 4 + 6 + 8 = 20.
+ 
+
+Constraints:
+
+2 <= nums.length <= 105
+1 <= nums[i], x <= 106
+
+
+
+
+
+1641. Count Sorted Vowel Strings
+Medium
+Topics
+Companies
+Hint
+Given an integer n, return the number of strings of length n that consist only of vowels (a, e, i, o, u) and are lexicographically sorted.
+
+A string s is lexicographically sorted if for all valid i, s[i] is the same as or comes before s[i+1] in the alphabet.
+
+ 
+
+Example 1:
+
+Input: n = 1
+Output: 5
+Explanation: The 5 sorted strings that consist of vowels only are ["a","e","i","o","u"].
+Example 2:
+
+Input: n = 2
+Output: 15
+Explanation: The 15 sorted strings that consist of vowels only are
+["aa","ae","ai","ao","au","ee","ei","eo","eu","ii","io","iu","oo","ou","uu"].
+Note that "ea" is not a valid string since 'e' comes after 'a' in the alphabet.
+
